@@ -1,0 +1,18 @@
+#define DOOR_SENSOR 4
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(DOOR_SENSOR, INPUT_PULLUP);
+  Serial.println("Door Sensor Test Started");
+}
+
+void loop() {
+  int state = digitalRead(DOOR_SENSOR);
+if (state == HIGH) {
+  Serial.println("Door is CLOSED");
+} else {
+  Serial.println("Door is OPEN");
+}
+
+  delay(1000); // check every second
+}
