@@ -33,13 +33,13 @@ void notifyOnButtonPress()
 void setup() {
   Serial.begin(115200);
   Serial.println("Booting ESP32...");
-  delay(1000);
+  delay(500);
   Serial.println("Connecting to wifi....");
   Blynk.begin(auth, ssid, pass);
   Serial.println("Connected to wifi!");
   pinMode(DOOR_SENSOR, INPUT_PULLUP);
   pinMode(buzzer, OUTPUT);
-  timer.setInterval(5000L, notifyOnButtonPress);
+  timer.setInterval(1000L, notifyOnButtonPress);
 }
 
 void loop()
